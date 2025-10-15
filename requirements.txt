@@ -1,0 +1,7 @@
+apache-airflow-providers-postgres==5.11.0 
+apache-airflow-providers-http==4.5.0
+apache-airflow-providers-mysql==5.3.0
+apache-airflow-providers-snowflake==6.5.4 
+mysqlclient
+spotipy==2.25.1
+python-dotenv==1.1.1
