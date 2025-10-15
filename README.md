@@ -50,4 +50,40 @@ run:
 Within your web browser, type in the URL:
 ```localhost:8080```
 
-### Step 5: Create Connections
+### Step 5: Set Up Connections in Airflow UI
+1. FS default
+- connection Id: fs_default
+- connection type: File(path)
+- extra fields JSON: { "path": "{\"path\": \"/\"}"}
+
+2. Snowflake
+[first setup you snowflake account if you don't have one yet]
+- connectin Id: snowflake_spotify
+- connection type: Snowflake
+- login, password and schema : [your account details]
+
+3. MySQL
+[first, create a MySQL user for Airflow]
+
+```sql
+CREATE DATABASE spotify_db; 
+CREATE USER 'airflow_user'@'%' IDENTIFIED BY 'airflow_pass'; 
+GRANT ALL PRIVILEGES ON coffee_db.* TO 'airflow_user'@'%'; 
+FLUSH PRIVILEGES;
+```
+
+- connection Id: mysql_spotify
+- connection type: MySQL
+- host: host.docker.internal
+- login : airflow_user
+- password: airflow_pass
+- port: 3306
+- schema: [put database name which you have created for the project] eg. spotify_db
+
+### Step 6: Restart the Airflow containers
+```docker compose down```
+```docker compose up -d```
+
+### Step 7: Trigger Dag
+Within the Airflow UI, navigate into the "Dags" section, and find 
+```spotify_data_pipeline```
