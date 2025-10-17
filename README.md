@@ -18,6 +18,12 @@ A dashboard I created utilizing the data loaded into snowflake, using Direct Que
 <!-- Add your Power BI dashboard screenshot here -->
 ![Power BI Dashboard](images/spotify_dash.png)
 
+## Airflow Directed Acyclic Graph
+A DAG representing the data pipeline
+
+<!-- Add your DAG screenshot here -->
+![DAG](images/spotify_dag_sc.png)
+
 ## Setup Instructions
 ### Prerequisites
 1. Docker installation
